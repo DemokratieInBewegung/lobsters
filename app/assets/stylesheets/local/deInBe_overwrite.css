@@ -1,0 +1,158 @@
+body {
+	font-family: 'Rubik', sans-serif;
+	color: #274F9E;
+}
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+
+p {
+	font-family: 'Merriweather', serif;
+  font-weight: 400;
+}
+
+a,
+a:visited {
+	color: #274F9E;
+  font-weight: 400;
+}
+
+a.btn,
+a.btn:visited,
+button,
+input[type=submit] {
+	color: white;
+	font-weight: 400;
+	text-transform: uppercase;
+	background-color: white;
+	color: #274F9E;
+	border: 1px solid #274F9E;
+	border-radius: 5px;
+	padding: 6px 12px;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+a.btn:hover,
+button:hover {
+	background-color: #274F9E;
+	color: white;
+	border: 1px solid #274F9E;
+}
+
+a.btn.red,
+button.red {
+	background-color: #eb5c4a;
+}
+
+a.btn.red.outline,
+button.red.outline,
+input[type=submit] {
+	background-color: white;
+	color: #eb5c4a;
+	border: 1px solid #eb5c4a;
+}
+
+a.btn.red.outline:hover,
+button.red.outline:hover,
+input[type=submit]:hover {
+	background-color: #eb5c4a;
+	color: white;
+}
+
+
+
+a.btn.purple,
+button.purple {
+	background-color: #62388E;
+}
+
+a.btn.purple.outline,
+button.purple.outline {
+	background-color: white;
+	color: #62388E;
+	border: 1px solid #62388E;
+}
+
+a.btn.purple.outline:hover,
+button.purple.outline:hover {
+	background-color: #62388E;
+	color: white;
+}
+
+
+/* specifics */
+#story_fetch_title {
+  text-transform: lowercase;
+}
+#l_holder {
+  display: none;
+}
+
+#footer, #header {
+/*   padding: 1em; */
+  color: white;
+}
+
+#header {
+  padding: 1em;
+}
+
+#footer { 
+  float: none !important;
+  text-align: right;
+	margin: 0;
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+}
+
+#header a,
+#header a:visited,
+#header a:hover,
+#footer a,
+#footer a:visited,
+#footer a:hover {
+  color: white !important;
+}
+
+#wrapper {
+/* 	border-left: 3px solid aqua; */
+  position: relative;
+}
+
+body {
+  background-image: linear-gradient(90deg, #62388E, #eb5c4a);
+}
+
+#inside  {
+	background-color: white;
+	padding: 1em 0;
+	margin: 0 1em 2em 1em;
+	border-radius: 5px;
+}
+
+
+.box .legend,
+.box label.required {
+  font-weight: 400;
+}
+
+.headerlinks a {
+ text-align: center;
+  padding: 0;
+  margin: 0 0.4em;
+}
+.cur_url {
+  border-bottom: 1px solid white;
+}
