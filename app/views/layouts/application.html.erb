@@ -44,19 +44,19 @@
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">
-        <a id="l_holder" style="background-color: #<%= @traffic_color %>;"
+        <!-- <a id="l_holder" style="background-color: #<%= @traffic_color %>;"
           href="/" title="<%= Rails.application.name %> (Current traffic: <%=
-          @traffic.to_i %>)"></a>
+          @traffic.to_i %>)"></a> -->
 
         <% links = {
-          "/" => @cur_url == "/" ? Rails.application.name : "Home",
+          "/" => @cur_url == "/" ? Rails.application.name : "Start",
           "/recent" => "Neueste",
           "/comments" => "Kommentare",
         } %>
 
         <% if @user && @user.can_submit_stories? %>
           <% links.merge!({ "/threads" => "Deine Diskussionen",
-            "/stories/new" => "Beitrag erstellen" }) %>
+            "/stories/new" => "+ Beitragen" }) %>
         <% end %>
 
         <% links.merge!({ "/search" => "Suche" }) %>
