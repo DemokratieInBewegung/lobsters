@@ -156,3 +156,18 @@ body {
 .cur_url {
   border-bottom: 1px solid white;
 }
+
+
+.upvoter {
+  border-width: 0 !important;
+  height: 16px !important;;
+}
+
+.upvoter::before {
+  content: "❤";
+  color: #bbb;
+}
+
+.upvoted .upvoter::before {
+  color: #EB564A;
+}
