@@ -1,7 +1,7 @@
 <% if @cur_url == "/recent" %>
   <div class="box" id="leader">
-    <em>The <a href="/newest">newest</a> stories with a random sampling of
-    recently submitted stories that have not yet reached the front page.</em>
+    <em>The <a href="/newest">neueste</a> Beiträge mit einem zufälligen Mix
+    von Einträgen, die es noch nicht auf die Startseite geschafft haben.</em>
   </div>
 <% end %>
 
@@ -13,7 +13,7 @@
 <div class="morelink">
   <% if @page && @page > 1 %>
     <a href="<%= @cur_url %><%= @cur_url == "/" ? "" : "/" %><%=
-      @page == 2 ? "" : "page/#{@page - 1}" %>">&lt;&lt; Page
+      @page == 2 ? "" : "page/#{@page - 1}" %>">&lt;&lt; Seite
       <%= @page - 1 %></a>
   <% end %>
 
@@ -22,6 +22,6 @@
       |
     <% end %>
     <a href="<%= @cur_url %><%= @cur_url == "/" ? "" : "/" %>page/<%=
-      @page + 1 %>">Page <%= @page + 1 %> &gt;&gt;</a>
+      @page + 1 %>">Seite <%= @page + 1 %> &gt;&gt;</a>
   <% end %>
 </div>

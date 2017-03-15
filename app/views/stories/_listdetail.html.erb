@@ -22,12 +22,12 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
           break_long_words(story.title) %></a>
       <% end %>
       <% if story.is_gone? %>
-        [Story removed by <%= story.is_moderated? ? "moderator" :
-          "original submitter" %>]
+        [ Durch <%= story.is_moderated? ? "Moderator" :
+          "Ersteller/in" %> entfernt.]
       <% end %>
     </span>
     <% if story.markeddown_description.present? %>
-      <a class="description_present" title="Additional text available"
+      <a class="description_present" title="mehr Text verfügbar"
         href="<%= story.comments_path %>">&#x2636;</a>
     <% end %>
     <% if story.can_be_seen_by_user?(@user) %>
@@ -70,9 +70,9 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
                 <%= ms.user.avatar_url(32) %> 2x" class="avatar"></a>
             <% end %>
             <% if story.user_is_author? %>
-              authored by
+              von
             <% else %>
-              via
+              durch
             <% end %>
             <a href="/u/<%= ms.user.username %>" class="<%=
               ms.html_class_for_user %>"><%= ms.user.username %></a>
@@ -101,18 +101,18 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
       <% end %>
       <% if story.previewing %>
         <% if story.user_is_author? %>
-          authored by
+          von
         <% else %>
-          via
+          durch
         <% end %>
         <a class="<%= story.html_class_for_user %>"><%=
           story.user.username %></a>
-        just now
+        grad jetzt
       <% else %>
         <% if story.user_is_author? %>
-          authored by
+          von
         <% else %>
-          via
+          durch
         <% end %>
         <a href="/u/<%= story.user.username %>" class="<%=
           story.html_class_for_user %>"><%= story.user.username %></a>
@@ -122,7 +122,7 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
         <% if story.is_editable_by_user?(@user) %>
           |
           <a href="<%= edit_story_path(story.short_id) %>" class="<%=
-            story.has_suggestions? ? "story_has_suggestions" : "" %>">edit</a>
+            story.has_suggestions? ? "story_has_suggestions" : "" %>">editieren</a>
 
           <% if story.is_gone? && story.is_undeletable_by_user?(@user) %>
             |
@@ -148,10 +148,10 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
         <% end %>
         <% if !story.is_gone? && @user %>
           <% if @user && story.vote && story.vote[:vote] == -1 %>
-            | <a class="flagger">unflag (<%=
+            | <a class="flagger">meldung zurück nehmen (<%=
               Vote::STORY_REASONS[story.vote[:reason]].to_s.downcase %>)</a>
           <% elsif @user && @user.can_downvote?(story) %>
-            | <a class="flagger">flag</a>
+            | <a class="flagger">melden</a>
           <% end %>
           <% if story.is_hidden_by_cur_user %>
             | <%= link_to "unhide", story_unhide_path(story.short_id),
@@ -161,23 +161,23 @@ class="story <%= story.vote && story.vote[:vote] == 1 ? "upvoted" : "" %>
               :class => "hider" %>
           <% end %>
           <% if defined?(single_story) && single_story && story.hider_count > 0 %>
-            (hidden by <%= pluralize(story.hider_count, "user") %>)
+            (versteckt durch <%= pluralize(story.hider_count, "user") %>)
           <% end %>
         <% end %>
         <% if story.url.present? %>
           |
           <a href="https://archive.is/<%= story.url %>" rel="nofollow"
-            target="_new">cached</a>
+            target="_new">gecacht</a>
         <% end %>
         <% if !story.is_gone? %>
           <span class="comments_label">
             |
             <a href="<%= story.comments_path %>">
             <% if story.comments_count == 0 %>
-              no comments
+              keine Kommentare
             <% else %>
               <%= story.comments_count %>
-                comment<%= story.comments_count == 1 ? "" : "s" %>
+                Kommentar<%= story.comments_count == 1 ? "" : "e" %>
             <% end %>
             </a>
           </span>
